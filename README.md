@@ -25,7 +25,7 @@ Or you can jave a look at it through this link [Demo App](https://couchbase-conn
 ### Installing Dependencies
 To install the required dependencies, run:
 ```sh
-pip install couchbase streamlit
+pip install couchbase streamlit couchbase-streamlit-connector
 ```
 
 ## 3. Usage Guide
@@ -84,12 +84,12 @@ st.help(connection)
 #### **Insert a Document**
 ```python
 connection.insert_document("222", {"key": "value"})
-st.write(connection.get_document("222"))
+st.write("Document 222 inserted")
 ```
 
 #### **Fetch a Document**
 ```python
-st.write(connection.get_document("111"))
+st.write(connection.get_document("222"))
 ```
 
 #### **Replace a Document**
