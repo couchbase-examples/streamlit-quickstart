@@ -1,0 +1,5 @@
+couchbase==4.3.5
+streamlit==1.42.0
+plotly
+geopy
+numpy
