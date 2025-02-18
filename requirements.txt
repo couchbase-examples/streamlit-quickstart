@@ -3,3 +3,4 @@ streamlit==1.42.0
 plotly
 geopy
 numpy
+couchbase-streamlit-connector
