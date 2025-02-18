@@ -28,7 +28,7 @@ st.write("- Cluster access permissions and allowed IP address configured [Docs](
 st.write("- Connection string obtained from Couchbase Capella")
 
 st.subheader("Installing Dependencies")
-st.code("pip install couchbase streamlit couchbase-streamlit-connector")
+st.code("pip install couchbase streamlit couchbase-streamlit-connector", language="bash")
 
 st.header("3. Usage Guide")
 
