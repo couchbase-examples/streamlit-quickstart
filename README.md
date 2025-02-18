@@ -11,6 +11,7 @@ pip install -r requirements.txt
 pip install plotly geopy numpy
 streamlit run src/Demo.py
 ```
+Or you can jave a look at it through this link [Demo App](https://couchbase-connector-demo-app.streamlit.app/)
 
 ## 2. Prerequisites
 ### System Requirements
