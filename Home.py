@@ -85,12 +85,12 @@ st.subheader("Performing CRUD Operations")
 st.write("Insert a Document")
 st.code("""
 connection.insert_document("222", {"key": "value"})
-st.write(connection.get_document("222"))
+st.write("Document 222 inserted")
 """, language="python")
 
 st.write("Fetch a Document")
 st.code("""
-st.write(connection.get_document("111"))
+st.write(connection.get_document("222"))
 """, language="python")
 
 st.write("Replace a Document")
