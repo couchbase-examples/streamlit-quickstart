@@ -4,7 +4,7 @@
 
 The [Couchbase-Streamlit Connector](https://github.com/Couchbase-Ecosystem/couchbase-streamlit-connector) provides a seamless way to integrate Couchbase with Streamlit applications. This connector simplifies database operations, allowing developers to interact with Couchbase clusters directly within Streamlit without requiring extensive SDK knowledge.
 
-This quickstart tutorial will guide you through building a basic Streamlit application with Couchbase, covering fundamental **CRUD** (Create, Read, Update, Delete) and **Query** operations. If you want to see the simple app built in this tutorial, check it out [here](https://couchbase-st-tutorial.streamlit.app/).  
+This quickstart tutorial will guide you through building a basic Streamlit application with Couchbase, covering fundamental **CRUD** (Create, Read, Update, Delete) and **Query** operations. If you want to see the simple app built in this tutorial, check it out [here](https://couchbase-st-tutorial.streamlit.app/). The whole code for this tutorial is available [here](https://github.com/couchbase-examples/streamlit-quickstart/blob/main/Home.py).
 
 If you're looking for a more comprehensive application with advanced functionalities, refer to [this tutorial](https://github.com/couchbase-examples/couchbase-tutorials/tree/main/tutorial/markdown/python/streamlit), which builds the [Couchbase Connector Demo App](https://couchbase-connector-demo-app.streamlit.app/).
 
