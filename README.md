@@ -363,7 +363,6 @@ This script serves as the main entry point for the Streamlit application, handli
 </div>
 
 
-
 - Performing CRUD Operations
 <table style="margin: auto; text-align: center; border-spacing: 2vw;">
   <tr>
@@ -377,6 +376,7 @@ This script serves as the main entry point for the Streamlit application, handli
 </table>
 
 - Running a Query
+
 <div style="text-align: center;">
     <img src="images/query_tab.png" style="width: 20vw; height: auto; border-radius: 1vw;">
 </div>
