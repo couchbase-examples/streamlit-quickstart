@@ -377,7 +377,7 @@ This script serves as the main entry point for the Streamlit application, handli
 </table>
 
 - Running a Query
-<img src="images/query_tab.png" style="display: block; max-width: 20vw; height: auto; margin: 2vw auto; border-radius: 1vw;">
+<img src="images/query_tab.png" style="display: block; width: 10vw; height: auto; margin: 2vw auto; border-radius: 1vw;">
 
 ## Conclusion
 
