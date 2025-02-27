@@ -201,7 +201,7 @@ def main():
 if __name__ == "__main__":
     # Set up the page configuration (title, icon, layout)
     st.set_page_config(
-        page_title="Couchbase Streamlit Demo",  # Title of the web app
+        page_title="Basic CRUD App using Couchbase-Streamlit-Connector",  # Title of the web app
         page_icon="🔌",  # Page icon (plugin symbol)
         layout="wide"  # Use a wide layout for better visibility
     )

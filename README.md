@@ -1,4 +1,4 @@
-# Couchbase-Streamlit Connector
+# Getting Started with the Couchbase-Streamlit Connector
 
 ## Introduction
 
@@ -6,7 +6,7 @@ The [Couchbase-Streamlit Connector](https://github.com/Couchbase-Ecosystem/couch
 
 This quickstart tutorial will guide you through building a basic Streamlit application with Couchbase, covering fundamental **CRUD** (Create, Read, Update, Delete) and **Query** operations. If you want to see the simple app built in this tutorial, check it out [here](https://couchbase-st-tutorial.streamlit.app/). The whole code for this tutorial is available [here](https://github.com/couchbase-examples/streamlit-quickstart/blob/main/Home.py).
 
-If you're looking for a more comprehensive application with advanced functionalities, refer to [this tutorial](https://github.com/couchbase-examples/couchbase-tutorials/tree/main/tutorial/markdown/python/streamlit), which builds the [Couchbase Connector Demo App](https://couchbase-connector-demo-app.streamlit.app/).
+If you're looking for a more comprehensive application with advanced functionalities, refer to [this tutorial](https://developer.couchbase.com/tutorial-couchbase-streamlit-connector), which builds the [Couchbase Connector Demo App](https://couchbase-connector-demo-app.streamlit.app/).
 
 
 ## Features
@@ -18,7 +18,53 @@ If you're looking for a more comprehensive application with advanced functionali
 - **Exception Handling**: Provides meaningful error messages for authentication failures, timeouts, and other Couchbase-related issues.
 - **Streamlit Integration**: Works as a `BaseConnection` class, making it compatible with Streamlit’s `st.connection()` API.
 
-## Setting Up Your First Application
+
+## Running the Demo Applications
+
+You can run both the **Quickstart Demo** and the **Comprehensive Demo** locally by following these steps:
+
+
+### Initialization
+
+```sh
+# Clone the repository
+git clone https://github.com/couchbase-examples/streamlit-quickstart.git
+cd streamlit-quickstart
+
+# Python Virtual Environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Running the Quickstart Demo (Basic CRUD App)
+
+```sh
+# Run the application
+streamlit run Home.py
+```
+
+<div style="text-align: center;">
+    <img src="images/startup_page.png" style="width: 50vw; height: auto; border-radius: 1vw;">
+</div>
+
+### Running the Comprehensive Demo (Advanced Features)
+
+```sh
+# Run the application
+streamlit run Demo.py
+```
+
+<div style="text-align: center;">
+    <img src="images/hotel_near_landmarks_tab.png" style="width: 50vw; height: auto; border-radius: 1vw;">
+</div>
+
+For a detailed explanation of how these applications work, refer to the [official tutorial](https://github.com/couchbase-examples/couchbase-tutorials/tree/main/tutorial/markdown/python/streamlit).
+
+
+## Creating the Basic CRUD Application Step-by-Step
 
 This section outlines the step-by-step process of building the Streamlit application that integrates with Couchbase for retrieving and inserting data.
 
@@ -30,7 +76,7 @@ Before setting up the environment, ensure you have the following:
 - **Operational Couchbase cluster** with configured access ([Instructions](https://docs.couchbase.com/cloud/get-started/connect.html#prerequisites))
 - **Connection string** from Couchbase Capella
 
-### Step 1: Installation and Setup
+### Installation and Setup
 Create an isolated Python environment, run the following commands:
 
 ```sh
@@ -48,7 +94,7 @@ streamlit hello
 
 If everything is set up correctly, a browser window should open with Streamlit's demo application.
 
-### Step 2: Implementing Function to make a Connection
+### Implementing Function to make a Connection
 
 Create a new file `app.py`:
 
@@ -113,7 +159,7 @@ def initialize_connection():
 ```
 This Streamlit app provides a simple user interface to connect to a Couchbase database. Users enter connection details (such as the connection string, credentials, and collection details) in the sidebar, and clicking the "Connect" button attempts to establish a connection using CouchbaseConnector. If successful, a success message is displayed, and the connection is stored in the session state. If the connection fails, an error message is shown.
 
-### Step 3: Implementing CRUD Operations
+### Implementing CRUD Operations
 
 #### Create Operation
 
@@ -255,7 +301,7 @@ def delete_document():
 ```
 This function allows users to delete an existing document from Couchbase by specifying its Document ID. When the "Delete" button is clicked, the document is removed from the database. The function provides immediate feedback, displaying a success message if the deletion is successful or an error message if the document does not exist or there is a connection issue.
 
-### Step 4: Implement Function for Querying Data
+### Implement Function for Querying Data
 Main function:
 ```python
 results = st.session_state["connection"].query(query)
@@ -297,7 +343,7 @@ def query_data():
 ```
 This function enables users to execute SQL++ (N1QL) queries against Couchbase and view the results in a Streamlit interface. Users enter a query in the text area and click the "Execute Query" button to retrieve data. The query results are processed using a for row in results loop, which converts the iterator into a list, ensuring that all results are displayed at once while optimizing memory usage. If the query execution fails, an error message is displayed.
 
-### Step 5: Implementing Main function
+### Implementing Main function
 ```python
 def main():
     # Initialize the Couchbase connection settings in the sidebar
