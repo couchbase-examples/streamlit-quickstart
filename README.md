@@ -14,7 +14,7 @@ If you're looking for a more comprehensive application with advanced functionali
 - **Seamless Connection Handling**: Establishes a Couchbase cluster connection via environment variables or manual parameters.
 - **CRUD Operations**: Supports inserting, retrieving, updating, and deleting documents from Couchbase collections.
 - **Dynamic Collection Switching**: Allows setting and switching between different Couchbase buckets, scopes, and collections.
-- **Efficient Query Execution**: Runs N1QL (SQL++) queries directly within Streamlit.
+- **Efficient Query Execution**: Runs SQL++ queries directly within Streamlit.
 - **Exception Handling**: Provides meaningful error messages for authentication failures, timeouts, and other Couchbase-related issues.
 - **Streamlit Integration**: Works as a `BaseConnection` class, making it compatible with Streamlit’s `st.connection()` API.
 
@@ -319,7 +319,7 @@ def query_data():
 
     # Expander widget to collapse/expand the query execution panel
     with st.expander("Execute SQL++ Query", expanded=False):
-        # Multi-line text area for entering a SQL++ (N1QL) query
+        # Multi-line text area for entering a SQL++ query
         query = st.text_area(
             "SQL++ Query",
             value="SELECT * FROM `travel-sample`.inventory.airline LIMIT 5;",  # Pre-filled example query
@@ -344,7 +344,7 @@ def query_data():
                 st.error(f"Query failed: {e}")
 
 ```
-This function enables users to execute SQL++ (N1QL) queries against Couchbase and view the results in a Streamlit interface. Users enter a query in the text area and click the "Execute Query" button to retrieve data. The query results are processed using a for row in results loop, which converts the iterator into a list, ensuring that all results are displayed at once while optimizing memory usage. If the query execution fails, an error message is displayed.
+This function enables users to execute SQL++ queries against Couchbase and view the results in a Streamlit interface. Users enter a query in the text area and click the "Execute Query" button to retrieve data. The query results are processed using a for row in results loop, which converts the iterator into a list, ensuring that all results are displayed at once while optimizing memory usage. If the query execution fails, an error message is displayed.
 
 ### Implementing Main function
 ```python
@@ -444,7 +444,7 @@ Here are some helpful resources for working with Couchbase and Streamlit:
 - [Couchbase Python SDK Compatibility](https://docs.couchbase.com/python-sdk/current/project-docs/compatibility.html#python-version-compat)  
 - [Getting Started with Couchbase Capella](https://docs.couchbase.com/cloud/get-started/intro.html)  
 - [Connecting to Couchbase Capella](https://docs.couchbase.com/cloud/get-started/connect.html#prerequisites)  
-- [N1QL Query Language Guide](https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/index.html)  
+- [SQL++ Query Language Guide](https://docs.couchbase.com/server/current/n1ql/n1ql-language-reference/index.html)  
 - [Couchbase SDKs Overview](https://docs.couchbase.com/home/sdk.html)  
 
 ### **Streamlit Documentation**
