@@ -390,7 +390,7 @@ def tab3_visual():
     
 ######################################### Main #################################################
 
-st.title("Couchbase Streamlit App")
+st.title("Flight Search App with Couchbase-Streamlit-Connector")
 
 st.sidebar.header("Enter Couchbase Credentials")
 conn_str = st.sidebar.text_input("Connection String", "couchbases://your-cluster-url")
