@@ -396,9 +396,9 @@ st.sidebar.header("Enter Couchbase Credentials")
 conn_str = st.sidebar.text_input("Connection String", "couchbases://your-cluster-url")
 username = st.sidebar.text_input("Username", "admin")
 password = st.sidebar.text_input("Password", type="password")
-bucket_name = st.sidebar.text_input("Bucket Name", "default")
-scope_name = st.sidebar.text_input("Scope Name", "_default")
-collection_name = st.sidebar.text_input("Collection Name", "_default")
+bucket_name = st.sidebar.text_input("Bucket Name", "travel-sample")
+scope_name = st.sidebar.text_input("Scope Name", "inventory")
+collection_name = st.sidebar.text_input("Collection Name", "airline")
 
 if st.sidebar.button("Connect"):
     try:
