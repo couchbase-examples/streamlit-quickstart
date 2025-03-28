@@ -23,7 +23,7 @@ def get_all_airports(_connection):
  
 @st.cache_data       
 def get_routes_for_airports(_connection, selected_airports_df):    
-    airports_faa = str(selected_airports_df["faa"].to_list()) # Initialize a string to store FAA codes in a list format
+    airports_faa = selected_airports_df["faa"].to_list() # Initialize a string to store FAA codes in a list format
     query = f"""
     SELECT * FROM `travel-sample`.`inventory`.`route`
     WHERE (sourceairport IN $airports_faa AND destinationairport IN $airports_faa);
