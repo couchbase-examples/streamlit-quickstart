@@ -2,3 +2,7 @@ plotly
 geopy
 numpy
 couchbase-streamlit-connector
+# couchbase-streamlit-connector 0.2.6 imports couchbase._utils, which was removed in couchbase 4.7.0.
+couchbase<4.7.0
+# Security floor: Pillow < 13.0.0 has high/critical CVEs (fixed in 13.0.0, which requires Python 3.11+).
+pillow>=13.0.0; python_version >= "3.11"
