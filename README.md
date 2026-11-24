@@ -71,7 +71,7 @@ This section outlines the step-by-step process of building the Streamlit applica
 ### Prerequisites
 Before setting up the environment, ensure you have the following:
 
-- **Python 3.10 or higher** (check [compatibility](https://docs.couchbase.com/python-sdk/current/project-docs/compatibility.html#python-version-compat) with the Couchbase SDK).  
+- **Python 3.11 or higher** (check [compatibility](https://docs.couchbase.com/python-sdk/current/project-docs/compatibility.html#python-version-compat) with the Couchbase SDK). Python 3.10 is end-of-life and cannot install the patched Pillow 13 release that Streamlit depends on.  
 - A **Couchbase Capella account** ([Docs](https://docs.couchbase.com/cloud/get-started/intro.html)) **or** a local installation of **Couchbase Server** ([Download](https://www.couchbase.com/downloads)).  
 - An **operational cluster** created in a project (Capella) or properly configured on your local machine (Couchbase Server).  
 - Ensure proper access control:  
