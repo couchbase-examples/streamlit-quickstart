@@ -71,7 +71,7 @@ def plot_airports_and_routes(airports_df, routes_df):
     fig.update_layout(
         map_zoom= 0.5,  # Zoom level
         showlegend= False,  # Hide legend
-        mapbox_style="open-street-map",  
+        map_style="open-street-map",  
         margin=dict(l=0, r=0, t=50, b=0),  # Remove extra margins
         title="Airports and Flight Routes"
     )
@@ -240,7 +240,7 @@ def create_landmark_map(landmarks, hotels_near_landmark):
     fig.update_layout(
         map_zoom=11,
         map_center=centre,
-        mapbox_style='open-street-map',
+        map_style='open-street-map',
         margin=dict(l=0, r=0, t=50, b=0),
         title='Landmarks and Hotels Nearby',
         showlegend=False,
@@ -303,7 +303,7 @@ def create_hotel_map(hotels_df):
     if hotels_df.empty:
         fig = go.Figure()
         fig.update_layout(
-            mapbox_style="open-street-map",
+            map_style="open-street-map",
             margin=dict(l=0, r=0, t=50, b=0),
             title="Hotels (colored by average rating)"
         )
@@ -371,7 +371,7 @@ def create_hotel_map(hotels_df):
     fig.update_layout(
         map_zoom=10,
         map_center=centre,
-        mapbox_style="open-street-map",
+        map_style="open-street-map",
         margin=dict(l=0, r=0, t=50, b=0),
         title="Hotels (colored by average rating)",
         coloraxis_colorbar=dict(
