@@ -78,33 +78,8 @@ def plot_airports_and_routes(airports_df, routes_df):
     
     st.plotly_chart(fig, use_container_width=True)
         
-def tab1_visual():
+def tab1_visual(connection):
     all_airports = get_all_airports(connection)
-    route_airports = set()
-    for route in [
-        {"sourceairport": "TLV", "destinationairport": "MRS"},
-        {"sourceairport": "TLV", "destinationairport": "NCE"},
-        {"sourceairport": "TNR", "destinationairport": "CDG"},
-        {"sourceairport": "TPA", "destinationairport": "ATL"},
-        {"sourceairport": "TPE", "destinationairport": "AMS"},
-        {"sourceairport": "TPE", "destinationairport": "MNL"},
-        {"sourceairport": "TRI", "destinationairport": "ATL"},
-        {"sourceairport": "TRN", "destinationairport": "CDG"},
-        {"sourceairport": "TUL", "destinationairport": "ATL"},
-        {"sourceairport": "TUN", "destinationairport": "CDG"},
-        {"sourceairport": "MCG", "destinationairport": "NIB"},
-        {"sourceairport": "TUN", "destinationairport": "MRS"},
-        {"sourceairport": "TUS", "destinationairport": "ATL"},
-        {"sourceairport": "TXL", "destinationairport": "CDG"},
-        {"sourceairport": "TXL", "destinationairport": "MRS"},
-        {"sourceairport": "TYS", "destinationairport": "ATL"},
-        {"sourceairport": "UIO", "destinationairport": "GYE"},
-        {"sourceairport": "VCE", "destinationairport": "CDG"},
-        {"sourceairport": "VCE", "destinationairport": "LYS"},
-        {"sourceairport": "VCE", "destinationairport": "MRS"}
-    ]:
-        route_airports.add(route["sourceairport"])
-        route_airports.add(route["destinationairport"])
     with st.expander("Select Airports"):
         st.checkbox("Select All Airports", key="select_all")
         container = st.container()
@@ -248,7 +223,7 @@ def create_landmark_map(landmarks, hotels_near_landmark):
     
     st.plotly_chart(fig, use_container_width=True)
 
-def tab2_visual():
+def tab2_visual(connection):
     landmarks = get_all_landmarks(connection)
     default_landmark = [landmarks[0]['name']] if landmarks else []
     selected_landmarks = st.multiselect("Select landmarks", [landmark['name'] for landmark in landmarks], default=default_landmark)
@@ -383,7 +358,7 @@ def create_hotel_map(hotels_df):
     
     st.plotly_chart(fig, use_container_width=True)
 
-def tab3_visual():
+def tab3_visual(connection):
     all_cities = get_all_cities(connection)["city"].tolist()
     cities = st.multiselect("Select cities", all_cities, default=["London"])
     hotels = get_all_hotels(connection, cities)
@@ -422,8 +397,8 @@ if "connection" in st.session_state:
     connection = st.session_state["connection"]
     tab1, tab2, tab3 = st.tabs(["Flight Routes Map", "Find hotels near Landmarks", "Find hotel in cities"])
     with tab1:
-        tab1_visual()
+        tab1_visual(connection)
     with tab2:
-        tab2_visual()
+        tab2_visual(connection)
     with tab3:
-        tab3_visual()
+        tab3_visual(connection)
